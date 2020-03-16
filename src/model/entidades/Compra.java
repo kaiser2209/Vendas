@@ -17,6 +17,15 @@ public class Compra {
     private LocalDate dataCompra;
     private float valorTotal;
     private int situacao;
+    
+    public Compra(int codigo, Fornecedor fornecedor, LocalDate dataCompra, 
+            float valorTotal, int situacao) {
+        this.codigo = codigo;
+        this.fornecedor = fornecedor;
+        this.dataCompra = dataCompra;
+        this.valorTotal = valorTotal;
+        this.situacao = situacao;
+    }
 
     public int getCodigo() {
         return codigo;

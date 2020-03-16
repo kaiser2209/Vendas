@@ -82,4 +82,24 @@ public class FornecedorDAO {
         
         return lista;
     }
+    
+    public Fornecedor buscaPeloCodigo(int codigo) throws SQLException {
+        String sql = "SELECT * FROM tbfornecedor WHERE Codigo = ?";
+        
+        PreparedStatement stmt = ConnectionFactory.prepararSQL(sql);
+        
+        ResultSet rs = stmt.executeQuery();
+        
+        Fornecedor f = null;
+        
+        while(rs.next()) {
+            f = new Fornecedor(
+                rs.getInt("Codigo"),
+                rs.getString("Nome"),
+                rs.getString("CNPJ")
+            );
+        }
+        
+        return f;
+    }
 }
