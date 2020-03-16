@@ -73,6 +73,8 @@ public class FornecedorDAO {
                 rs.getString("Nome"),
                 rs.getString("CNPJ")
             );
+            
+            lista.add(f);
         }
         
         rs.close();
